@@ -1,5 +1,3 @@
-import re
-
 number_dict = {'一':1, '二':2, '三':3, '四':4, '五':5, '六':6, '七':7, '八':8, '九':9, '零':0}
 disit_dict = {'十':10, '百':100, '千':1000, '万':10000, '億':100000000}
 
@@ -21,7 +19,6 @@ def convert_kansuji_to_number(kansuji):
     converted_number = 0 # 最終出力
     
     for k in kansuji:
-
         # 一から九であった場合
         if k in number_dict.keys():
             num = number_dict[k]
@@ -64,6 +61,5 @@ if __name__=='__main__':
     # 320,000,001
     print("{:,}".format(convert_kansuji_to_number('二十一億四千七百四十八万三千六百四十八')))
     # 2,147,483,647
-
-
-
+    print("{:,}".format(convert_kansuji_to_number('九千九百九十九億九千九百九十九万九千九百九十九')))
+    # 999,999,999,999
